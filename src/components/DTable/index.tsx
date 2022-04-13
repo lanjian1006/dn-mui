@@ -1,4 +1,4 @@
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
@@ -31,14 +31,19 @@ interface DTableProps extends TableProps {
     enableCheck?: boolean,
     align?: "inherit" | "left" | "center" | "right" | "justify",
     customActions?: ReactNode
+    onDelete?: (checkList: Array<string | number>) => void
+}
+
+interface DTableRowProps extends TableRowProps {
+    showActions?: boolean
 }
 
 const StyledTableCell = styled(TableCell)<TableCellProps & { enableBorder?: boolean }>((props) => ({
     border: props.enableBorder ? `solid 1px ${props.theme.palette.grey["300"]}` : '',
 }))
 
-const StyledTableRow = styled(TableRow)<TableRowProps>((props) => ({
-    backgroundColor: props.theme.palette.grey["200"],
+const StyledTableRow = styled(TableRow)<DTableRowProps>((props) => ({
+    background: props.theme.palette.grey["200"]
 }))
 
 export default function DTable(props: DTableProps) {
@@ -67,6 +72,10 @@ export default function DTable(props: DTableProps) {
         setCheckAll(newCheck)
     }
 
+    const onDelete = () => {
+        props.onDelete && props.onDelete(checkList)
+    }
+
     return <Box>
         <TableContainer>
             <Table
@@ -76,28 +85,28 @@ export default function DTable(props: DTableProps) {
                 padding={props.padding}
             >
                 <TableHead>
-                    <StyledTableRow>
+                    <StyledTableRow showActions={checkList.length > 0}>
                         {
                             props.enableCheck && <StyledTableCell
                                 width={40}
-                                enableBorder={enableBorder}
+                                enableBorder={checkList.length === 0 && enableBorder}
                                 align={props.align}
                             >
                                 <Checkbox
+                                    size={'small'}
                                     checked={checkAll}
                                     indeterminate={checkAll && props.src.length !== checkList.length}
                                     onChange={onCheckAll}
-                                    size={'small'}
                                 />
                             </StyledTableCell>
                         }
                         {
                             checkList.length > 0 ?
                                 <StyledTableCell
-                                    enableBorder={enableBorder}
+                                    enableBorder={checkList.length === 0 && enableBorder}
                                     colSpan={props.columns.length}>
                                     <IconButton>
-                                        <DeleteOutlineIcon/>
+                                        <DeleteIcon onClick={onDelete}/>
                                         {
                                             props.customActions
                                         }

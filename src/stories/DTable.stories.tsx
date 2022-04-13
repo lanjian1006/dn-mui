@@ -44,7 +44,7 @@ const src = [
     {
         id: '3',
         name: 'Jack',
-        gender: 'Femal',
+        gender: 'Female',
         age: '28'
     }
 ]
