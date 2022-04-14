@@ -1,16 +1,13 @@
 import DeleteIcon from '@mui/icons-material/Delete';
-import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import {styled} from '@mui/material/styles';
 import Table, {TableProps} from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, {TableCellProps} from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow, {TableRowProps} from '@mui/material/TableRow';
 import React, {ReactNode, useState} from "react";
-import Paper from "@mui/material/Paper";
 
 interface DTableColumn {
     field: string
