@@ -10,6 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow, {TableRowProps} from '@mui/material/TableRow';
 import React, {ReactNode, useState} from "react";
+import Paper from "@mui/material/Paper";
 
 interface DTableColumn {
     field: string
@@ -39,7 +40,10 @@ interface DTableRowProps extends TableRowProps {
 }
 
 const StyledTableCell = styled(TableCell)<TableCellProps & { enableBorder?: boolean }>((props) => ({
-    border: props.enableBorder ? `solid 1px ${props.theme.palette.grey["300"]}` : '',
+    borderRight: props.enableBorder ? `solid 1px ${props.theme.palette.grey["300"]}` : '',
+    '&:last-child': {
+        borderRight: 'none'
+    }
 }))
 
 const StyledTableRow = styled(TableRow)<DTableRowProps>((props) => ({
@@ -76,95 +80,92 @@ export default function DTable(props: DTableProps) {
         props.onDelete && props.onDelete(checkList)
     }
 
-    return <Box>
-        <TableContainer>
-            <Table
-                size={props.size}
-                stickyHeader={props.stickyHeader}
-                sx={props.sx}
-                padding={props.padding}
-            >
-                <TableHead>
-                    <StyledTableRow showActions={checkList.length > 0}>
+    return <Table
+        size={props.size}
+        stickyHeader={props.stickyHeader}
+        sx={props.sx}
+        padding={props.padding}
+    >
+        <TableHead>
+            <StyledTableRow showActions={checkList.length > 0}>
+                {
+                    props.enableCheck && <StyledTableCell
+                        width={40}
+                        enableBorder={checkList.length === 0 && enableBorder}
+                        align={props.align}
+                    >
+                        <Checkbox
+                            size={'small'}
+                            checked={checkAll}
+                            indeterminate={checkAll && props.src.length !== checkList.length}
+                            onChange={onCheckAll}
+                        />
+                    </StyledTableCell>
+                }
+                {
+                    checkList.length > 0 ?
+                        <StyledTableCell
+                            enableBorder={checkList.length === 0 && enableBorder}
+                            colSpan={props.columns.length}
+                        >
+                            <IconButton>
+                                <DeleteIcon onClick={onDelete}/>
+                                {
+                                    props.customActions
+                                }
+                            </IconButton>
+                        </StyledTableCell> :
+                        props.columns.map((column) => (
+                            <StyledTableCell
+                                width={column.width}
+                                enableBorder={enableBorder}
+                                align={props.align}
+                            >
+                                {
+                                    column.headerName
+                                }
+                            </StyledTableCell>
+                        ))
+                }
+            </StyledTableRow>
+        </TableHead>
+        <TableBody>
+            {
+                props.src.map((row) => (
+                    <TableRow
+                        selected={checkList.indexOf(row.id) !== -1}
+                        onClick={() => props.enableCheck && onChange(row.id)}
+                    >
                         {
                             props.enableCheck && <StyledTableCell
-                                width={40}
-                                enableBorder={checkList.length === 0 && enableBorder}
+                                enableBorder={enableBorder}
                                 align={props.align}
+                                width={40}
                             >
                                 <Checkbox
                                     size={'small'}
-                                    checked={checkAll}
-                                    indeterminate={checkAll && props.src.length !== checkList.length}
-                                    onChange={onCheckAll}
-                                />
+                                    checked={checkList.indexOf(row.id) !== -1}
+                                    onChange={() => onChange(row.id)}/>
                             </StyledTableCell>
                         }
                         {
-                            checkList.length > 0 ?
+                            props.columns.map((column) => (
                                 <StyledTableCell
-                                    enableBorder={checkList.length === 0 && enableBorder}
-                                    colSpan={props.columns.length}>
-                                    <IconButton>
-                                        <DeleteIcon onClick={onDelete}/>
-                                        {
-                                            props.customActions
-                                        }
-                                    </IconButton>
-                                </StyledTableCell> :
-                                props.columns.map((column) => (
-                                    <StyledTableCell
-                                        width={column.width}
-                                        enableBorder={enableBorder}
-                                        align={props.align}
-                                    >
-                                        {
-                                            column.headerName
-                                        }
-                                    </StyledTableCell>
-                                ))
+                                    width={column.width}
+                                    enableBorder={enableBorder}
+                                    align={props.align}
+                                >
+                                    {
+                                        row[column.field]
+                                    }
+                                </StyledTableCell>
+                            ))
                         }
-                    </StyledTableRow>
-                </TableHead>
-                <TableBody>
-                    {
-                        props.src.map((row) => (
-                            <TableRow
-                                selected={checkList.indexOf(row.id) !== -1}
-                                onClick={() => props.enableCheck && onChange(row.id)}
-                            >
-                                {
-                                    props.enableCheck && <StyledTableCell
-                                        width={40}
-                                        enableBorder={enableBorder}
-                                        align={props.align}
-                                    >
-                                        <Checkbox
-                                            size={'small'}
-                                            checked={checkList.indexOf(row.id) !== -1}
-                                            onChange={() => onChange(row.id)}/>
-                                    </StyledTableCell>
-                                }
-                                {
-                                    props.columns.map((column) => (
-                                        <StyledTableCell
-                                            width={column.width}
-                                            enableBorder={enableBorder}
-                                            align={props.align}
-                                        >
-                                            {
-                                                row[column.field]
-                                            }
-                                        </StyledTableCell>
-                                    ))
-                                }
-                            </TableRow>
-                        ))
-                    }
-                </TableBody>
-            </Table>
-        </TableContainer>
-    </Box>
+                    </TableRow>
+                ))
+            }
+        </TableBody>
+    </Table>
 }
 
 export type {

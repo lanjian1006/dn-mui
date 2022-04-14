@@ -13,19 +13,22 @@ const Template: ComponentStory<typeof DTable> = (args) => <DTable {...args} />;
 const columns: DTableColumn[] = [
     {
         field: 'id',
-        headerName: 'ID'
+        headerName: 'ID',
+        width: 80
     },
     {
         field: 'name',
-        headerName: 'Name'
+        headerName: 'Name',
+        width: 120
     },
     {
         field: 'gender',
-        headerName: 'Gender'
+        headerName: 'Gender',
+        width: 80
     },
     {
         field: 'age',
-        headerName: 'Age'
+        headerName: 'Age',
     }
 ]
 const src = [
@@ -39,7 +42,7 @@ const src = [
         id: '2',
         name: 'Tiger',
         gender: 'Male',
-        age: '28'
+        age: '28',
     },
     {
         id: '3',
