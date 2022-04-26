@@ -87,8 +87,7 @@ export default function DTable(props: DTableProps) {
             <StyledTableRow showActions={checkList.length > 0}>
                 {
                     props.enableCheck && <StyledTableCell
-                        width={40}
-                        enableBorder={checkList.length === 0 && enableBorder}
+                        enableBorder={enableBorder}
                         align={props.align}
                     >
                         <Checkbox
