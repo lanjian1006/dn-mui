@@ -1,20 +1,26 @@
-import {ListItem, ListItemButton, ListItemIcon, ListItemProps} from "@mui/material";
-import {ReactNode} from "react";
+import { ListItemText } from "@mui/material";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import React, {ReactNode} from "react";
 
-interface DMenuProps extends ListItemProps{
+interface DMenuItemProps{
     prefixIcon?: ReactNode
-    content?: ReactNode
+    primary?: string
+    handleClick?: (e: React.MouseEvent) => void
 }
 
-export default function DMenuItem (props: DMenuProps) {
+export default function DMenuItem (props: DMenuItemProps) {
     return <ListItem>
-        <ListItemButton>
+        <ListItemButton onClick={props.handleClick}>
             <ListItemIcon>
                 {props.prefixIcon}
             </ListItemIcon>
-            {
-                props.content
-            }
+            <ListItemText primary={props.primary} />
         </ListItemButton>
     </ListItem>
+}
+
+export type{
+    DMenuItemProps
 }
