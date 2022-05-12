@@ -11,12 +11,12 @@ export default {
 
 
 const Template: ComponentStory<typeof DSubMenu> = (args) => <DSubMenu {...args} >
-    <DMenuItem primary="menu one" prefixIcon={<EqualizerIcon />}/>
+    <DMenuItem primary="Level Two" prefixIcon={<EqualizerIcon />}/>
 </DSubMenu>
 
 
 export const Primary = Template.bind({});
 Primary.args = {
     prefixIcon: <BuildIcon />,
-    primary: 'SubMenu',
+    primary: 'Level One',
 };

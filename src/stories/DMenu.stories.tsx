@@ -1,21 +1,48 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import DMenuItem from "../components/DMenu/DMenuItem";
+import DMenu, { MenuNode } from 'components/DMenu';
 import BuildIcon from '@mui/icons-material/Build';
 
 export default {
     title: 'Example/DMenu',
-    component: DMenuItem,
-} as ComponentMeta<typeof DMenuItem>;
+    component: DMenu,
+} as ComponentMeta<typeof DMenu>;
 
-const Template: ComponentStory<typeof DMenuItem> = (args) => <DMenuItem {...args} />;
-const handleClick = (e: React.MouseEvent) => {
-    console.log(e);
-}
+const Template: ComponentStory<typeof DMenu> = (args) => <DMenu {...args} />;
 
+const menuJson: MenuNode[] = [{
+    icon: <BuildIcon fontSize='small' />,
+    name: 'Fruit',
+    children: [
+        {
+            icon: <BuildIcon fontSize='small' />,
+            name: 'Apple',
+        },
+        {
+            icon: <BuildIcon fontSize='small' />,
+            name: 'Peach',
+        },
+        {
+            icon: <BuildIcon fontSize='small' />,
+            name: 'Orange Class',
+            children: [
+                {
+                    icon: <BuildIcon fontSize='small' />,
+                    name: 'Orange',
+                },
+                {
+                    icon: <BuildIcon fontSize='small' />,
+                    name: 'Pomelo',
+                },
+                {
+                    icon: <BuildIcon fontSize='small' />,
+                    name: 'Linmo',
+                },
+            ]
+        },
+    ]
+}]
 export const Primary = Template.bind({});
 Primary.args = {
-    prefixIcon: <BuildIcon />,
-    primary: 'hello',
-    handleClick: handleClick
+    dataSource: menuJson
 };
