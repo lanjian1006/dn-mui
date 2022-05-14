@@ -1,21 +1,18 @@
-import {Checkbox, IconButton} from "@mui/material";
-import DTableCell from "./DTableCell";
+import {IconButton} from "@mui/material";
 import DTableRow from "./DTableRow";
 import DeleteIcon from '@mui/icons-material/Delete';
+import TableCell from "@mui/material/TableCell";
 
 interface DTableToolBarProps{
     columnCount: number
 }
 
 export default function DTableToolBar(props: DTableToolBarProps) {
-    return <DTableRow>
-        <DTableCell rawProps={{width: '38px'}}>
-            <Checkbox size="small"/>
-        </DTableCell>
-        <DTableCell rawProps={{colSpan: props.columnCount}}>
+    return <DTableRow type={'head'}>
+        <TableCell colSpan={props.columnCount}>
             <IconButton>
                 <DeleteIcon fontSize={'small'} />
             </IconButton>
-        </DTableCell>
+        </TableCell>
     </DTableRow>
 }
