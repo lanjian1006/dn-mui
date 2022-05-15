@@ -21,11 +21,13 @@ const Columns: Column[] = [
     {
         field: 'firstName',
         fieldName: 'First Name',
-        fixed: 'right'
+        fixed: 'right',
+        width: '200'
     },
     {
         field: 'lastName',
-        fieldName: 'Last Name'
+        fieldName: 'Last Name',
+        width: '200'
     },
     {
         field: 'age',

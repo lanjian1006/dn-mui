@@ -1,4 +1,4 @@
-import {Checkbox, TableRow} from "@mui/material";
+import {Checkbox, TableRow, Typography} from "@mui/material";
 import {ReactNode} from "react";
 import TableCell, {TableCellProps} from "@mui/material/TableCell";
 
@@ -17,43 +17,53 @@ interface DTableRowProps {
     children?: ReactNode
     columns?: Column[]
     rowData?: TableRowData
+    rowIndex?: number
     type: 'head' | 'body'
     cellProps?: TableCellProps
-    selected?: boolean
     hover?: boolean
-    onClick?: () => void
+    onClick?: (id: any) => void
+    onHeadCheck?: (id: any) => void
     border?: boolean
     cellAlign?: 'center' | 'inherit' | 'justify' | 'left' | 'right',
     cellPadding?: 'checkbox' | 'none' | 'normal',
+    indeterminate?: boolean,
+    check?: boolean
 }
 
 export default function DTableRow(props: DTableRowProps) {
-
     const cellSX = {
         borderRight: props.border ? 'solid 1px #ddd' : 'none',
         '&:last-child': {
             borderRight: 'none'
         }
     }
+    const onRowClick = () => {
+        props.onClick?.(props.rowData?.['id'])
+    }
+    const onHeadCheck = () => {
+        props.onHeadCheck?.(props.rowData?.['id'])
+    }
 
     return <TableRow
-        selected={props.selected}
+        selected={props.type === 'head' ? false : props.check}
         hover={props.hover}
-        onClick={props.onClick}
+        onClick={onRowClick}
+        sx={{
+            background: props.type === 'head' ? '#ccc' : 'none'
+        }}
     >
         {
             <TableCell
                 width={'38px'}
                 padding={'checkbox'}
                 align={'center'}
-                sx={{
-                    ...cellSX,
-                    pr: '4px',
-                    position: 'sticky',
-                    right: '0px'
-                }}
-            >
-                <Checkbox size={'small'}/>
+                sx={{...cellSX, pr: '4px'}}>
+                <Checkbox
+                    size={'small'}
+                    checked={props.check}
+                    indeterminate={props.indeterminate}
+                    onClick={onHeadCheck}
+                />
             </TableCell>
         }
         {
@@ -61,10 +71,14 @@ export default function DTableRow(props: DTableRowProps) {
                 padding={props.cellPadding}
                 align={props.cellAlign}
                 width={column.width}
-                sx={cellSX}
-            >
+                sx={cellSX}>
                 {
-                    props.type === 'head' ? column.fieldName : props.rowData?.[column.field]
+                    props.type === 'head' ?
+                        <Typography sx={{height:'29.5px', lineHeight: '29.5px'}}>
+                            {column.fieldName}
+                        </Typography>
+                        :
+                        props.rowData?.[column.field]
                 }
             </TableCell>)
         }
@@ -73,5 +87,6 @@ export default function DTableRow(props: DTableRowProps) {
 
 export type{
     Column,
-    TableRowData
+    TableRowData,
+    DTableRowProps
 }
