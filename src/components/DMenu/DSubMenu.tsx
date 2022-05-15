@@ -1,6 +1,6 @@
 import Collapse from "@mui/material/Collapse";
 import DMenuItem from "./DMenuItem";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import { Box } from "@mui/material";
@@ -11,16 +11,15 @@ interface DSubMenuProps {
     primary?: string
     handleClick?: (id: any) => void
     selected?: boolean
+    open?: boolean
     id?: any
 }
 
 export function DSubMenu(props: DSubMenuProps) {
-    const [open, setOpen] = useState(false)
     const handleClick = () => {
-        setOpen(!open)
         props.handleClick?.(props.id ?? props.primary)
     }
-    const postIcons =  open ? <ExpandLess /> : <ExpandMore />
+    const postIcons =  props.open ? <ExpandLess /> : <ExpandMore />
     
     return <>
         <DMenuItem
@@ -30,7 +29,7 @@ export function DSubMenu(props: DSubMenuProps) {
             postIcon={postIcons}
             selected={props.selected}
         />
-        <Collapse in={open}>
+        <Collapse in={props.open}>
             <Box sx={{pl: 2}}>
                 {
                     props.children
