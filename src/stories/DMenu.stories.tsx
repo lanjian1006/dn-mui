@@ -11,30 +11,37 @@ export default {
 const Template: ComponentStory<typeof DMenu> = (args) => <DMenu {...args} />;
 
 const menuJson: MenuNode[] = [{
+    id: 'fruit',
     icon: <BuildIcon fontSize='small' />,
     name: 'Fruit',
     children: [
         {
             icon: <BuildIcon fontSize='small' />,
             name: 'Apple',
+            id: 'apple'
         },
         {
             icon: <BuildIcon fontSize='small' />,
             name: 'Peach',
+            id: 'peach',
         },
         {
             icon: <BuildIcon fontSize='small' />,
             name: 'Orange Class',
+            id: 'orange_class',
             children: [
                 {
                     icon: <BuildIcon fontSize='small' />,
                     name: 'Orange',
+                    id: 'orange'
                 },
                 {
+                    id: 'pomolo',
                     icon: <BuildIcon fontSize='small' />,
                     name: 'Pomelo',
                 },
                 {
+                    id: 'linmo',
                     icon: <BuildIcon fontSize='small' />,
                     name: 'Linmo',
                 },

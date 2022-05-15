@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4db3ab73-bb71-47d4-bd1f-9c55040efebc" name="Changes" comment="table">
-      <change afterPath="$PROJECT_DIR$/src/components/Utilities/ArrayAssistant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DTable/DTableRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DTable/DTableRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DTable/DTableToolBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DTable/DTableToolBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DTable/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/DTable.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/DTable.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DMenu/DMenuItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DMenu/DMenuItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DMenu/DSubMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DMenu/DSubMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DMenu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DMenu/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/DMenu.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/DMenu.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +109,7 @@
       <workItem from="1652361392296" duration="4734000" />
       <workItem from="1652371626995" duration="14407000" />
       <workItem from="1652509671105" duration="17000" />
-      <workItem from="1652509960972" duration="31738000" />
+      <workItem from="1652509960972" duration="34066000" />
     </task>
     <task id="LOCAL-00001" summary="basic table and ops bar">
       <created>1649838395381</created>
@@ -183,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652530719341</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="table">
+      <created>1652588997976</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652588997976</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
