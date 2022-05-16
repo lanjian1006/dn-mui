@@ -1,8 +1,8 @@
-import {List} from "@mui/material"
-import {ReactNode, useState} from "react"
+import { List } from "@mui/material"
+import { ReactNode, useEffect, useState } from "react"
 import DMenuItem from "./DMenuItem"
-import {DSubMenu} from "./DSubMenu"
-import {_indexOf} from "../Utilities/ArrayAssistant";
+import { DSubMenu } from "./DSubMenu"
+import { _indexOf } from "../Utilities/ArrayAssistant"
 
 type MenuNode = {
     id: string | number
@@ -15,6 +15,7 @@ interface DMenuProps {
     dataSource: MenuNode[]
     onSelect?: (id: any) => void
     focusMode?: boolean
+    preselect?: string | number
 }
 
 export default function DMenu(props: DMenuProps) {
@@ -34,7 +35,7 @@ export default function DMenu(props: DMenuProps) {
         }
     }
 
-    function generateMenu(nodes: MenuNode[], parent?: any) {
+    const generateMenu = (nodes: MenuNode[], parent?: any) => {
         return nodes.map(item => {
             if (parent) {
                 menuMap.set(item.id, parent)
@@ -60,6 +61,23 @@ export default function DMenu(props: DMenuProps) {
             />
         })
     }
+
+    const setPreselect = () => {
+        let parent = menuMap.get(props.preselect)
+        let newOpenList: any = []
+        while (parent !== undefined) {
+            openList.push(parent)
+            parent = menuMap.get(parent)
+        }
+        if (openList.length > 0){
+            newOpenList = newOpenList.concat(openList)
+            setOpenList(newOpenList)
+        }
+    }
+
+    useEffect(() => {
+        props.preselect && openList.length === 0 && setPreselect()
+    })
 
     return <List>
         {generateMenu(props.dataSource)}
