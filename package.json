@@ -4,7 +4,8 @@
   "description": "The first version of component library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,56 @@
   "bugs": {
     "url": "https://github.com/lanjian1006/dn-mui/issues"
   },
-  "homepage": "https://github.com/lanjian1006/dn-mui#readme"
+  "homepage": "https://github.com/lanjian1006/dn-mui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@storybook/addon-actions": "^6.5.4",
+    "@storybook/addon-essentials": "^6.5.4",
+    "@storybook/addon-interactions": "^6.5.4",
+    "@storybook/addon-links": "^6.5.4",
+    "@storybook/builder-webpack4": "^6.5.4",
+    "@storybook/manager-webpack4": "^6.5.4",
+    "@storybook/react": "^6.5.4",
+    "@storybook/testing-library": "^0.0.11",
+    "@types/react": "^18.0.9",
+    "babel-loader": "^8.2.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "lib",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "declaration": true,
+    "declarationDir": "lib",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "dependencies": {}
 }
