@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db3ab73-bb71-47d4-bd1f-9c55040efebc" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.storybook/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.storybook/preview.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Button.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Header.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Introduction.stories.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Page.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/code-brackets.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/colors.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/comments.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/direction.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/flow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/plugin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/repo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/assets/stackalt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/page.css" afterDir="false" />
+    <list default="true" id="4db3ab73-bb71-47d4-bd1f-9c55040efebc" name="Changes" comment="add dependency of creating library">
+      <change afterPath="$PROJECT_DIR$/src/components/DMenu/DMenuItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DMenu/DSubMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DMenu/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DTable/DTableRow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DTable/DTableToolBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DTable/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utilities/ArrayAssistant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +35,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,22 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jianlan/Workspace/dn-mui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/jianlan/Workspace/dn-mui/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jianlan/Workspace/dn-mui/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/jianlan/Workspace/dn-mui/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.storybook">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -104,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.storybook" />
         <item itemvalue="npm.storybook" />
       </list>
     </recent_temporary>
@@ -215,28 +211,7 @@
       <option name="project" value="LOCAL" />
       <updated>1652619529459</updated>
     </task>
-    <task id="LOCAL-00013" summary="add dependency of creating library">
-      <created>1653372212398</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1653372212399</updated>
-    </task>
-    <task id="LOCAL-00014" summary="clean">
-      <created>1653372538345</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1653372538345</updated>
-    </task>
-    <task id="LOCAL-00015" summary="init">
-      <created>1653372670139</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1653372670139</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,8 +237,6 @@
     <MESSAGE value="table" />
     <MESSAGE value="menu" />
     <MESSAGE value="add dependency of creating library" />
-    <MESSAGE value="clean" />
-    <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dependency of creating library" />
   </component>
 </project>
