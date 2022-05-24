@@ -2,7 +2,7 @@
   "name": "dn-mui",
   "version": "1.0.0",
   "description": "The first version of component library",
-  "main": "lib/index.js",
+  "main": "index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "scripts": {
