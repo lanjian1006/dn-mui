@@ -2,10 +2,13 @@
   "name": "dn-mui",
   "version": "1.0.0",
   "description": "The first version of component library",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,8 @@
   "homepage": "https://github.com/lanjian1006/dn-mui#readme",
   "devDependencies": {
     "@babel/core": "^7.18.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.5.4",
     "@storybook/addon-essentials": "^6.5.4",
     "@storybook/addon-interactions": "^6.5.4",
@@ -34,8 +39,13 @@
     "@storybook/testing-library": "^0.0.11",
     "@types/react": "^18.0.9",
     "babel-loader": "^8.2.5",
+    "postcss": "^8.4.14",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "rollup": "^2.74.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.2",
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
@@ -77,5 +87,9 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.1"
+  },
+  "peerDependenciesMeta": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   }
 }
