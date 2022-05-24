@@ -1,5 +1,5 @@
-import DMenu, { DMenuItem, DSubMenu } from 'components/DMenu/index'
-import DTable from 'components/DTable/index'
+import {DMenu, DMenuItem, DSubMenu} from 'components/index'
+import {DTable} from 'components/index'
 
 export {
     DMenu,
