@@ -15,7 +15,7 @@ interface DSubMenuProps {
     id?: any
 }
 
-export function DSubMenu(props: DSubMenuProps) {
+export default function DSubMenu(props: DSubMenuProps) {
     const handleClick = () => {
         props.handleClick?.(props.id ?? props.primary)
     }

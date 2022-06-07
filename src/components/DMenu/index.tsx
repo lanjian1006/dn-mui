@@ -1,8 +1,8 @@
 import { List } from "@mui/material"
 import { ReactNode, useEffect, useState } from "react"
 import DMenuItem from "./DMenuItem"
-import { DSubMenu } from "./DSubMenu"
-import { _indexOf } from "../Utilities/ArrayAssistant"
+import DSubMenu from "./DSubMenu"
+import {_indexOf} from "../Utilities/ArrayAssistant";
 
 type MenuNode = {
     id: string | number
@@ -86,4 +86,9 @@ export default function DMenu(props: DMenuProps) {
 
 export type {
     MenuNode
+}
+
+export {
+    DSubMenu,
+    DMenuItem
 }
