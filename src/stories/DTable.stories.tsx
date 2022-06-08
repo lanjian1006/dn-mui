@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import DTable from "../components/DTable";
-import {Column} from "../components/DTable/DTableRow";
+import {DTable, DColumn} from "index";
 import {Paper, TableContainer} from "@mui/material";
 
 export default {
@@ -12,7 +11,7 @@ const Template: ComponentStory<typeof DTable> = (args) => <TableContainer compon
     <DTable {...args} />
 </TableContainer>
 
-const Columns: Column[] = [
+const Columns: DColumn[] = [
     {
         field: 'id',
         fieldName: 'ID',

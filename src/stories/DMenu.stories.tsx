@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import DMenu, { MenuNode } from 'components/DMenu';
+import {DMenu, MenuNode} from 'index';
 import BuildIcon from '@mui/icons-material/Build';
 
 export default {
