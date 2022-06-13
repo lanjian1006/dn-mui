@@ -2,7 +2,7 @@ import {ListItemText} from "@mui/material";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 interface DMenuItemProps {
     prefixIcon?: ReactNode

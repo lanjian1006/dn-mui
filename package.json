@@ -1,95 +1,74 @@
 {
   "name": "dn-mui",
-  "version": "1.0.0",
-  "description": "The first version of component library",
-  "main": "index.js",
-  "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build": "rollup -c"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lanjian1006/dn-mui.git"
-  },
-  "keywords": [
-    "component",
-    "react",
-    "mui"
-  ],
-  "author": "lanjian",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lanjian1006/dn-mui/issues"
-  },
-  "homepage": "https://github.com/lanjian1006/dn-mui#readme",
-  "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@storybook/addon-actions": "^6.5.4",
-    "@storybook/addon-essentials": "^6.5.4",
-    "@storybook/addon-interactions": "^6.5.4",
-    "@storybook/addon-links": "^6.5.4",
-    "@storybook/builder-webpack4": "^6.5.4",
-    "@storybook/manager-webpack4": "^6.5.4",
-    "@storybook/react": "^6.5.4",
-    "@storybook/testing-library": "^0.0.11",
-    "@types/react": "^18.0.9",
-    "babel-loader": "^8.2.5",
-    "postcss": "^8.4.14",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.3",
+    "@mui/material": "^5.8.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.39",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "rollup": "^2.74.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.31.2",
-    "typescript": "^4.6.4"
+    "react-scripts": "5.0.1",
+    "typescript": "^4.7.3",
+    "web-vitals": "^2.1.4"
   },
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
-  "compilerOptions": {
-    "target": "es5",
-    "outDir": "lib",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ],
-    "declaration": true,
-    "declarationDir": "lib",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ],
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.0",
-    "@mui/material": "^5.8.1"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
-  "peerDependenciesMeta": {
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack5": "^6.5.8",
+    "@storybook/manager-webpack5": "^6.5.8",
+    "@storybook/node-logger": "^6.5.8",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.12",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "prop-types": "^15.8.1",
+    "webpack": "^5.73.0"
   }
 }
