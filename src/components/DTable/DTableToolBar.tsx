@@ -2,6 +2,7 @@ import {IconButton} from "@mui/material";
 import DTableRow, {DTableRowProps} from "./DTableRow";
 import DeleteIcon from '@mui/icons-material/Delete';
 import TableCell from "@mui/material/TableCell";
+import React from 'react'
 
 interface DTableToolBarProps extends DTableRowProps {
     columnCount: number

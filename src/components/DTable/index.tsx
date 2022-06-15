@@ -3,6 +3,7 @@ import DTableRow, {Column, TableRowData} from "./DTableRow";
 import {useState} from "react";
 import {_indexOf} from "../Utilities/ArrayAssistant";
 import DTableToolBar from "./DTableToolBar";
+import React from 'react'
 
 interface DTableProps {
     columns: Column[]
