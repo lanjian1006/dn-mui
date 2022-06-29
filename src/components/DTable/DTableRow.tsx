@@ -1,13 +1,15 @@
 import {Checkbox, TableRow, Typography} from "@mui/material";
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 import TableCell, {TableCellProps} from "@mui/material/TableCell";
-import React from 'react'
 
 type Column = {
     field: string,
     fieldName: string,
     width?: number | string,
     fixed?: 'right' | 'left'
+    cusDefine?: {
+        filedName?: (row?: any) => string | number | boolean | ReactNode
+    }
 }
 
 class TableRowData {
@@ -25,9 +27,9 @@ interface DTableRowProps {
     onClick?: (id: any) => void
     onHeadCheck?: (id: any) => void
     border?: boolean
-    cellAlign?: 'center' | 'inherit' | 'justify' | 'left' | 'right',
-    cellPadding?: 'checkbox' | 'none' | 'normal',
-    indeterminate?: boolean,
+    cellAlign?: 'center' | 'inherit' | 'justify' | 'left' | 'right'
+    cellPadding?: 'checkbox' | 'none' | 'normal'
+    indeterminate?: boolean
     check?: boolean
 }
 
@@ -58,6 +60,7 @@ export default function DTableRow(props: DTableRowProps) {
                 width={'38px'}
                 padding={'checkbox'}
                 align={'center'}
+                key={'row-check'}
                 sx={{...cellSX, pr: '4px'}}>
                 <Checkbox
                     size={'small'}
@@ -68,18 +71,18 @@ export default function DTableRow(props: DTableRowProps) {
             </TableCell>
         }
         {
-            props.children ?? props.columns?.map((column) => <TableCell
+            props.children ?? props.columns?.map((column, cindex) => <TableCell
                 padding={props.cellPadding}
                 align={props.cellAlign}
                 width={column.width}
+                key={column.field + cindex}
                 sx={cellSX}>
                 {
                     props.type === 'head' ?
-                        <Typography sx={{height:'29.5px', lineHeight: '29.5px'}}>
+                        <Typography sx={{height: '29.5px', lineHeight: '29.5px'}}>
                             {column.fieldName}
-                        </Typography>
-                        :
-                        props.rowData?.[column.field]
+                        </Typography>:
+                        column.cusDefine?.filedName?.(props.rowData) ?? props.rowData?.[column.field]
                 }
             </TableCell>)
         }
