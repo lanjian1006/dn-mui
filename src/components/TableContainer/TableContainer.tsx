@@ -1,6 +1,7 @@
 import {Typography} from "@mui/material";
 import Box from "@mui/material/Box";
-import React, {ReactNode} from "react";
+import React from "react";
+import {ReactNode} from "react";
 
 interface TableContainerProps {
     children?: ReactNode

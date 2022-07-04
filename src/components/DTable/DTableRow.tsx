@@ -1,6 +1,7 @@
 import {Checkbox, TableRow, Typography} from "@mui/material";
-import React, {ReactNode} from "react";
+import {ReactNode} from "react";
 import TableCell, {TableCellProps} from "@mui/material/TableCell";
+import React from "react";
 
 type Column = {
     field: string,

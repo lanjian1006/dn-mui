@@ -1,1 +1,3 @@
-export * from './DAppBar'
+import DAppBar from "./DAppBar";
+
+export default DAppBar

@@ -1,1 +1,3 @@
-export * from './DSeparator'
+import DSeparator from './DSeparator'
+
+export default DSeparator

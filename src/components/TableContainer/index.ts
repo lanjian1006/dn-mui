@@ -1,1 +1,3 @@
-export * from './TableContainer'
+import TableContainer from "./TableContainer";
+
+export default TableContainer

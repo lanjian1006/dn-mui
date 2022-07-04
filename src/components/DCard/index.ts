@@ -1,5 +1,3 @@
 import DHeadCard from "./HeadCard";
 
-export  {
-    DHeadCard
-}
+export default DHeadCard

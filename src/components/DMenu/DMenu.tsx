@@ -4,7 +4,7 @@ import DMenuItem from "./DMenuItem"
 import DSubMenu from "./DSubMenu"
 import {_indexOf} from "../Utilities/ArrayAssistant";
 import {SxProps, Theme} from "@mui/material/styles";
-import React from 'react'
+import React from "react";
 
 type MenuNode = {
     id: string | number
