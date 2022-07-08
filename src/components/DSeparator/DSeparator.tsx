@@ -1,6 +1,5 @@
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 import {Box} from "@mui/material";
-import React from "react";
 
 interface SeparatorProps {
     children?: Array<ReactNode>,

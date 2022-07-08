@@ -2,9 +2,8 @@ import DTable from "./DTable";
 import DTableRow, {Column, TableRowData, DTableRowProps} from "./DTableRow";
 import DTableToolBar from "./DTableToolBar";
 
-export default DTable
-
 export {
+    DTable,
     DTableRow,
     DTableToolBar
 }

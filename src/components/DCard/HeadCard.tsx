@@ -1,11 +1,10 @@
 import {Box} from "@mui/material";
-import React from "react";
 import {ReactNode} from "react";
 
 interface HeadCardProps {
     width?: string
     height?: string
-    headHeight?: string,
+    headHeight?: string
     head?: ReactNode
     children?: ReactNode
 }

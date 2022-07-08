@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import {SxProps, Theme} from "@mui/material/styles";
-import React from "react";
 
 interface DAppBarProps {
     children?: JSX.Element | JSX.Element[] | string
