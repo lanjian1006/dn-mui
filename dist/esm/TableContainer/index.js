@@ -1,3 +1,2 @@
-import TableContainer from "./TableContainer";
-export default TableContainer;
+export * from './TableContainer';
 //# sourceMappingURL=index.js.map

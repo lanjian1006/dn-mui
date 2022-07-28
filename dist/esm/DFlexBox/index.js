@@ -1,3 +1,2 @@
-import DFlexBox from "./DFlexBox";
-export default DFlexBox;
+export * from './DFlexBox';
 //# sourceMappingURL=index.js.map

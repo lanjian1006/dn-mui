@@ -1,6 +1,5 @@
 import { Checkbox, TableRow, Typography } from "@mui/material";
 import TableCell from "@mui/material/TableCell";
-import React from "react";
 class TableRowData {
 }
 export default function DTableRow(props) {

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import DMenuItem from "./DMenuItem";
 import DSubMenu from "./DSubMenu";
 import { _indexOf } from "../Utilities/ArrayAssistant";
-import React from "react";
 export default function DMenu(props) {
     const [selected, setSelected] = useState('');
     const [openList, setOpenList] = useState([]);

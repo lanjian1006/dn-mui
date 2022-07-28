@@ -3,7 +3,6 @@ import DTableRow from "./DTableRow";
 import { useState } from "react";
 import { _indexOf } from "../Utilities/ArrayAssistant";
 import DTableToolBar from "./DTableToolBar";
-import React from "react";
 export default function DTable(props) {
     var _a, _b, _c, _d;
     const [selectList, setSelectList] = useState([]);

@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import {ReactNode} from "react";
 import {SxProps, Theme} from "@mui/material/styles";
+import React from "react";
 
 interface DFlexBoxProps {
     children?: ReactNode,

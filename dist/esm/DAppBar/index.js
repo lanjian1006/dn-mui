@@ -1,3 +1,2 @@
-import DAppBar from "./DAppBar";
-export default DAppBar;
+export * from './DAppBar';
 //# sourceMappingURL=index.js.map

@@ -1,3 +1,3 @@
 import DHeadCard from "./HeadCard";
-export default DHeadCard;
+export { DHeadCard };
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import React from "react";
 export default function HeadCard(props) {
     return (React.createElement(Box, { sx: {
             display: 'inline-block',

@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
 import React from "react";
+import { Box } from "@mui/material";
 export default function DSeparator(props) {
     var _a;
     return React.createElement(Box, { sx: Object.assign({ display: 'flex', justifyContent: props.position, alignItems: 'center' }, props.sx) }, (_a = props.children) === null || _a === void 0 ? void 0 : _a.map((child, index) => {
